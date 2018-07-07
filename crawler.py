@@ -34,7 +34,7 @@ class Crawler:
         for blocks in link_block:
             if blocks.find_all('div', class_='titles'):
                 for block in blocks.find_all('div', class_='titles'):
-                    self.links.append("%s%s" % (self.main_url,block.find('a').get('href')))
+                    self.links.append("%s%s" % (self.main_url, block.find('a').get('href')))
 
     def nameFind(self):
         for url in self.links:
@@ -47,12 +47,16 @@ class Crawler:
         
 
 if __name__ == '__main__':
-    name ="Путина"
+    name ="Меркель"
     date_news = "26.06.2018"
     crawler = Crawler(name, date_news)
     print(crawler.pages_name)
-
-
+    print("end")
+# Пример выводит словарь, где:
+#  ключ - название страницы,
+# значение  - ненулевое количество упоминаний персоны.
+# {'https://lenta.ru/articles/2018/06/25/merkel_i_ee_problemi/': 21}
+# end
 
 
 
